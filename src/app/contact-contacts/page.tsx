@@ -1,9 +1,18 @@
 'use client';
 import React, { useState } from 'react';
 
+// Define a type for contact submissions
+interface Contact {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  createdAt: string;
+}
+
 export default function ViewContactsPage() {
   const [password, setPassword] = useState('');
-  const [contacts, setContacts] = useState<any[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
   const [error, setError] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(false);
